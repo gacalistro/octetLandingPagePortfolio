@@ -7,6 +7,10 @@
     <title>Landing Page</title>
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,6 +18,12 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
+    <!-- JS -->
+    <script
+      defer
+      src="https://unpkg.com/swiper@8/swiper-bundle.min.js"
+    ></script>
+    <script defer src="main.js"></script>
   </head>
 
   <body>
@@ -23,7 +33,23 @@
           <span><strong>Gabriel</strong> Calistro</span>
         </div>
 
-        <button class="open-menu">
+        <div class="menu">
+          <ul>
+            <li><a onclick="closeMenu()" href="#home">Home</a></li>
+            <li><a onclick="closeMenu()" href="#services">Services</a></li>
+            <li><a onclick="closeMenu()" href="#works">Projects</a></li>
+            <li><a onclick="closeMenu()" href="#about">About</a></li>
+            <li>
+              <a onclick="closeMenu()" href="#testimonials">Testimonials</a>
+            </li>
+          </ul>
+
+          <a class="start" target="_blank" href="https://github.com/gahcalistro"
+            >Start a project</a
+          >
+        </div>
+
+        <button onclick="openMenu()" class="open-menu">
           <svg
             width="40"
             height="40"
@@ -54,6 +80,24 @@
             />
           </svg>
         </button>
+
+        <button onclick="closeMenu()" class="close-menu">
+          <svg
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M30 10L10 30M10 10L30 30"
+              stroke="#FFFAF1"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
       </div>
     </nav>
 
@@ -72,7 +116,7 @@
           </p>
         </header>
 
-        <a href="" class="button">
+        <a href="#footer" class="button">
           <span>Contact Me</span>
           <span>
             <svg
@@ -379,7 +423,7 @@
           </p>
         </header>
 
-        <a href="" class="button">
+        <a href="#footer" class="button">
           <span>Contact Me</span>
           <span>
             <svg
@@ -666,37 +710,97 @@
 
     <section id="testimonials">
       <div class="wrapper">
-        <header>
-          <h2>Testimonials</h2>
-        </header>
+        <div class="testimonial swiper">
+          <header>
+            <h2>Testimonials</h2>
 
-        <div class="testimonials">
-          <div class="testimonial">
-            <cite>
-              <img
-                src="https://i.pinimg.com/originals/64/8d/bb/648dbbd9c1e7c7d9a1fa60a5344aea6e.jpg"
-                alt="Foto de Perfil"
-              />
-              <p>Josh Brollins</p>
-            </cite>
-            <blockquote>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Reprehenderit pariatur eaque nihil aliquid facilis molestiae
-                ullam ipsa rem eveniet explicabo, officia, temporibus eos.
-                Veniam placeat laudantium consequatur recusandae labore culpa!
-              </p>
-            </blockquote>
+            <div class="swiper-pagination"></div>
+          </header>
+
+          <div class="swiper-wrapper">
+            <div class="testimonial swiper-slide">
+              <cite>
+                <img
+                  src="https://imagensemoldes.com.br/wp-content/uploads/2020/07/Man-Memes-PNG.png"
+                  alt="Foto de Perfil"
+                />
+                <p>Casimiro Miguel</p>
+              </cite>
+              <blockquote>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Reprehenderit pariatur eaque nihil aliquid facilis molestiae
+                  ullam ipsa rem eveniet explicabo, officia, temporibus eos.
+                  Veniam placeat laudantium consequatur recusandae labore culpa!
+                </p>
+              </blockquote>
+            </div>
+
+            <div class="testimonial swiper-slide">
+              <cite>
+                <img
+                  src="https://www.pngmart.com/files/11/Dank-Meme-PNG-Photos.png"
+                  alt="Foto de Perfil"
+                />
+                <p>Amouranth</p>
+              </cite>
+              <blockquote>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Reprehenderit pariatur eaque nihil aliquid facilis molestiae
+                  ullam ipsa rem eveniet explicabo, officia, temporibus eos.
+                  Veniam placeat laudantium consequatur recusandae labore culpa!
+                </p>
+              </blockquote>
+            </div>
+
+            <div class="testimonial swiper-slide">
+              <cite>
+                <img
+                  src="https://toppng.com/uploads/preview/orang-transparent-orange-meme-11563225464xcvkdkjoic.png"
+                  alt="Foto de Perfil"
+                />
+                <p>X Æ A-Xii</p>
+              </cite>
+              <blockquote>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Reprehenderit pariatur eaque nihil aliquid facilis molestiae
+                  ullam ipsa rem eveniet explicabo, officia, temporibus eos.
+                  Veniam placeat laudantium consequatur recusandae labore culpa!
+                </p>
+              </blockquote>
+            </div>
+
+            <div class="testimonial swiper-slide">
+              <cite>
+                <img
+                  src="https://toppng.com/uploads/preview/meme-sticker-memes-para-stickers-115628492524qlykisyxv.png"
+                  alt="Foto de Perfil"
+                />
+                <p>google_was_my_idea</p>
+              </cite>
+              <blockquote>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Reprehenderit pariatur eaque nihil aliquid facilis molestiae
+                  ullam ipsa rem eveniet explicabo, officia, temporibus eos.
+                  Veniam placeat laudantium consequatur recusandae labore culpa!
+                </p>
+              </blockquote>
+            </div>
           </div>
+
+          <!-- If we need pagination -->
         </div>
       </div>
     </section>
 
-    <footer>
+    <footer id="footer">
       <div class="wrapper">
         <h2>Interested in working with me?</h2>
 
-        <a href="" class="button">
+        <a href="https://github.com/gahcalistro" target="_blank" class="button">
           <span>Contact Me</span>
           <span>
             <svg
@@ -719,7 +823,7 @@
         <h3>Let's get social</h3>
         <ul class="social-links">
           <li>
-            <a href="">
+            <a target="_blank" href="https://www.linkedin.com/in/gahcalistro/">
               <svg
                 width="32"
                 height="32"
@@ -731,7 +835,6 @@
                   fill-rule="evenodd"
                   clip-rule="evenodd"
                   d="M0 32V0H32V32H0Z"
-                  fill="#D2D2D2"
                   fill-opacity="0.01"
                 />
                 <path
@@ -745,7 +848,7 @@
           </li>
 
           <li>
-            <a href="">
+            <a target="_blank" href="https://github.com/gahcalistro">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -761,7 +864,7 @@
           </li>
 
           <li>
-            <a href="">
+            <a target="_blank" href="https://www.instagram.com/gahcalistro/">
               <svg
                 width="26"
                 height="26"
@@ -780,7 +883,10 @@
           </li>
         </ul>
 
-        <p>Designed by <a href="">Octet Design Studio</a></p>
+        <p>
+          Designed by
+          <a href="https://octet.design/">Octet Design Studio</a>
+        </p>
       </div>
     </footer>
   </body>

@@ -28,12 +28,19 @@ body {
   height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
   color: white;
 
   background-color: var(--bg);
+
+  overflow: overlay;
+  -webkit-tap-highlight-color: transparent;
 }
 
 p {
@@ -47,9 +54,12 @@ img {
   height: auto;
 }
 
+section:not(#home) {
+  scroll-margin-top: 4rem;
+}
+
 section:not(#home) .wrapper {
-  padding-block: 4rem;
-  margin-block: 6rem;
+  padding-block: 6rem;
 }
 
 section h2 {
@@ -67,8 +77,40 @@ section header p {
   padding-inline: 2.4rem;
 }
 
+.button {
+  display: flex;
+  color: white;
+  width: fit-content;
+}
+
+.button span {
+  padding: 1.2rem;
+
+  transition: background 200ms;
+}
+
+.button span:nth-child(1) {
+  background-color: var(--primary);
+
+  border-radius: 0.4rem 0 0 0.4rem;
+}
+
+.button span:nth-child(2) {
+  background-color: white;
+
+  border-radius: 0 0.4rem 0.4rem 0;
+}
+
+.button:hover span:nth-child(1) {
+  background-color: var(--bg-cards);
+  border-left: 2px solid white;
+}
+.button:hover span:nth-child(2) svg path {
+  fill: var(--bg-cards);
+}
+
 /* Custom Colors */
-.open-menu path {
+nav button path {
   stroke: var(--primary);
 }
 
@@ -101,11 +143,95 @@ nav .logo {
   text-transform: uppercase;
 }
 
-nav .open-menu {
+nav button {
   border: none;
   background: none;
 
   cursor: pointer;
+}
+
+.menu,
+.close-menu {
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* MENU-EXPANDED ====================== */
+body.menu-expanded {
+  overflow: hidden;
+}
+
+body.menu-expanded > :not(nav),
+body.menu-expanded .open-menu {
+  visibility: hidden;
+}
+
+body.menu-expanded .menu,
+body.menu-expanded .close-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+body.menu-expanded .close-menu {
+  position: relative;
+}
+
+body.menu-expanded .menu {
+  width: 100vw;
+  height: 100vh;
+
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.menu a {
+  color: white;
+  font-size: 2rem;
+}
+
+.menu ul a:hover {
+  transition: 300ms;
+
+  font-size: 2.2rem;
+}
+
+.menu .start {
+  margin-top: 10rem;
+}
+
+.menu .start::after {
+  content: "";
+  width: 50%;
+  height: 3px;
+
+  margin-left: 50%;
+
+  display: block;
+
+  position: relative;
+  top: 1rem;
+
+  background-color: var(--primary);
+
+  transition: margin 300ms, width 500ms;
+}
+
+.menu .start:hover::after {
+  margin-left: 0;
+  width: 100%;
 }
 
 /* HOME ====================== */
@@ -126,27 +252,6 @@ nav .open-menu {
 
 #home .button {
   margin-bottom: 6rem;
-}
-
-.button {
-  display: flex;
-  color: white;
-}
-
-.button span {
-  padding: 1.2rem;
-}
-
-.button span:nth-child(1) {
-  background-color: var(--primary);
-
-  border-radius: 0.4rem 0 0 0.4rem;
-}
-
-.button span:nth-child(2) {
-  background-color: white;
-
-  border-radius: 0 0.4rem 0.4rem 0;
 }
 
 .stats {
@@ -193,9 +298,12 @@ nav .open-menu {
 }
 
 /* SERVICES ====================== */
+
 #services .wrapper {
   background: var(--bg-section);
   border-radius: 0.6rem;
+
+  margin-block: 6rem;
 }
 
 table {
@@ -340,10 +448,31 @@ tr td:last-child {
 }
 
 /* TESTIMONIALS ====================== */
-.testimonial {
+.swiper {
+  width: 100%;
+}
+
+.swiper-slide {
   padding: 2.8rem;
 
   background-color: var(--bg-testimonials-highlight);
+
+  border-radius: 0.8rem;
+}
+
+.swiper .swiper-pagination {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.swiper .swiper-pagination-bullet {
+  width: 12%;
+  height: 3px;
+  border-radius: 0;
+  background-color: white;
 }
 
 .testimonial cite {
@@ -352,6 +481,7 @@ tr td:last-child {
   gap: 2.2rem;
 
   margin-bottom: 2rem;
+  word-break: break-word;
 }
 
 .testimonial cite img {
@@ -359,6 +489,8 @@ tr td:last-child {
   height: 4rem;
   object-fit: cover;
   border-radius: 1rem;
+
+  background-color: var(--bg-cards);
 }
 
 .testimonial cite p {
@@ -366,6 +498,14 @@ tr td:last-child {
   font-size: 1.8rem;
   font-weight: 600;
   color: white;
+}
+
+.testimonial header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 3rem;
 }
 
 /* FOOTER ====================== */
