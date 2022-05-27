@@ -63,7 +63,7 @@ section:not(#home) .wrapper {
 }
 
 section h2 {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   font-size: 3rem;
 }
 
@@ -334,6 +334,10 @@ body.menu-expanded .menu ul a:hover {
   padding-block: 1.9rem;
 }
 
+.stat:first-child {
+  padding-top: 0;
+}
+
 .stat h3 {
   font-size: 4rem;
   line-height: 130%;
@@ -465,10 +469,6 @@ tr td:last-child {
 }
 
 /* APPROACH ====================== */
-#approach h2 {
-  margin-bottom: 6rem;
-}
-
 .cards {
   display: flex;
   flex-direction: column;
@@ -503,6 +503,10 @@ tr td:last-child {
 #about h3 {
   font-size: 1.6rem;
   margin-bottom: 2rem;
+}
+
+#about img {
+  margin-bottom: 4rem;
 }
 
 .skills {
@@ -549,6 +553,12 @@ tr td:last-child {
   background-color: var(--bg-testimonials-highlight);
 }
 
+.testimonial header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .testimonial cite {
   display: flex;
   align-items: center;
@@ -572,14 +582,6 @@ tr td:last-child {
   font-size: 1.8rem;
   font-weight: 600;
   color: white;
-}
-
-.testimonial header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  margin-bottom: 3rem;
 }
 
 /* FOOTER ====================== */
