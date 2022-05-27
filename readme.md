@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Exemplo da página Portfolio Landing Page" src="https://i.imgur.com/cu5d8lg.png" width="90%">
+  <img alt="Exemplo da página Portfolio Landing Page" src="https://i.imgur.com/TGVKkf1.jpeg" width="90%">
 </p>
 
 ## <img src="https://cdn-icons-png.flaticon.com/512/922/922656.png" height="30px" width="30px"/> Technologies
