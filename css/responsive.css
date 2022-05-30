@@ -1,0 +1,236 @@
+/* RESPONSIVE ====================== */
+@media (min-width: 1024px) {
+  .wrapper {
+    width: min(112rem, 100%);
+
+    display: grid;
+  }
+
+  section#services .wrapper,
+  section#projects .wrapper,
+  section#about .wrapper {
+    grid-template-areas: "A B";
+  }
+
+  .image {
+    width: 80%;
+    height: auto;
+  }
+
+  /* NAV +========== */
+  /* Reset */
+  nav#navigation .wrapper * {
+    margin: 0;
+    padding: 0;
+    display: initial;
+    visibility: initial;
+    opacity: initial;
+    position: initial;
+  }
+
+  nav#navigation .open-menu,
+  nav#navigation .close-menu {
+    display: none;
+  }
+
+  nav#navigation .menu {
+    width: 67%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav#navigation .menu ul {
+    display: flex;
+    flex-direction: row;
+    gap: 7rem;
+  }
+
+  nav#navigation .menu a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  nav#navigation .menu a span {
+    display: none;
+  }
+
+  nav#navigation .menu ul a:hover span,
+  nav#navigation .menu ul a.active span {
+    position: absolute;
+    bottom: 1rem;
+
+    display: initial;
+    font-size: 1.4rem;
+  }
+
+  nav#navigation .menu ul a:hover::after,
+  nav#navigation .menu ul a.active::after {
+    content: "";
+
+    width: 100%;
+    height: 2px;
+
+    display: block;
+
+    position: relative;
+
+    background-color: var(--primary);
+    top: 2rem;
+  }
+
+  /* HOME +========== */
+  section#home {
+    padding-top: calc(var(--nav-height) + 3rem);
+  }
+
+  section#home .wrapper {
+    grid-template-columns: 30% 1fr 25%;
+    grid-template-areas: "A B C";
+  }
+
+  section#home header h1 {
+    font-size: 3.6rem;
+  }
+
+  section#home .colA {
+    padding-right: 2rem;
+  }
+  section#home .colb {
+    padding-inline: 4rem;
+  }
+
+  section#home .colC {
+    padding-left: 2rem;
+  }
+
+  section#home .colA,
+  section#home .colC {
+    padding-top: 5rem;
+  }
+
+  section#home .stat {
+    padding-block: 1.2rem;
+  }
+
+  section#home .stat h3 {
+    font-size: 3.4rem;
+  }
+
+  section#home .stat:first-child {
+    padding-top: 0;
+  }
+
+  section#home .business {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+
+  /* SERVICES +========== */
+  section#services .wrapper {
+    grid-template-columns: 1fr 60%;
+
+    padding-inline: 6rem;
+  }
+
+  section#services .colA,
+  section#services .colB {
+    align-self: center;
+  }
+
+  section#services .colA {
+    padding-right: 12rem;
+  }
+
+  section#services table {
+    margin-top: 0;
+  }
+
+  section#services tr {
+    display: grid;
+    grid-template-columns: 15% 20% 1fr;
+  }
+
+  section#services tr td:last-child {
+    padding-top: 0;
+  }
+
+  /* PROJECTS +========== */
+  section#projects .wrapper {
+    grid-template-columns: 35% 1fr;
+  }
+
+  section#projects .colA {
+    padding-right: 5rem;
+  }
+
+  section#projects .projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    margin-top: 0;
+    padding-inline: 0;
+  }
+
+  section#projects .projects li {
+    height: 35rem;
+  }
+
+  section#projects .projects li img {
+    left: 4rem;
+  }
+
+  /* APPROACH +========== */
+  section#approach .cards {
+    flex-direction: row;
+  }
+
+  /* ABOUT +========== */
+  section#about h2 {
+    margin-bottom: 4rem;
+  }
+
+  section#about img {
+    margin: 0;
+  }
+
+  section#about .colB {
+    align-self: center;
+  }
+
+  section#about .skills {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 3rem;
+  }
+
+  section#about p {
+    font-size: 1.8rem;
+  }
+
+  section#about .skill p {
+    font-size: 1.6rem;
+  }
+
+  /* footer +========== */
+  footer .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  footer .button {
+    margin: 0;
+  }
+
+  footer h3 {
+    margin-bottom: 2rem;
+  }
+
+  footer .social-links,
+  footer h2 {
+    margin-bottom: 4rem;
+  }
+}
