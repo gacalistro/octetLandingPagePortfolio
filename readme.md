@@ -20,6 +20,8 @@ This project is a responsive landing page in One Page format, and it was made in
 
 I've found the layout on Figma and it's free to use. Designed by [Octet Design Studio](https://octet.design/).
 
+- [Take a look on my project](https://gahcalistro.github.io/octetLandingPagePortfolio/)
+
 ## <img src="https://cdn-icons-png.flaticon.com/512/922/922699.png" height="25px" width="25px"/> Layout
 
 Avaliable on [this link](<https://www.figma.com/file/2BNlznQCbca1oe9JGH7Yl2/Free-Landing-Page-UI-Kit-(v1.0)-(Community)?node-id=31%3A2>). For more details, make sure you have an account on [<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" height="16px" width="16px"/> Figma](https://figma.com).
